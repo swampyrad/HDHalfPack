@@ -164,8 +164,25 @@ class WildHalfPack:IdleDummy{
 		//$Sprite "HPAKC0"
 	override void postbeginplay(){
 		super.postbeginplay();
-		let aaa=HDBackpack(spawn("HDBackpack",pos,ALLOW_REPLACE));
+		let aaa=HDHalfPack(spawn("HDHalfPack",pos,ALLOW_REPLACE));
 		aaa.RandomContents();
 		destroy();
 	}
 }
+
+class HalfPack_Spawner : EventHandler
+{
+
+override void CheckReplacement(ReplaceEvent HalfPack) {
+	switch (HalfPack.Replacee.GetClassName()) {
+
+  case 'WildBackpack' 	:   if (!random(0,9))HalfPack.Replacement = "WildHalfPack";
+                            break;
+
+		}
+
+	HalfPack.IsFinal = false;
+	}
+}
+
+

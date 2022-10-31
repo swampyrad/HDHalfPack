@@ -1,0 +1,16 @@
+sprite HPAKA0, 22, 20{
+    offset 11,20
+    patch HPAKA0, 0, 0{}
+}
+
+sprite HPAKB0,20,22{
+	offset 10,22
+	xscale 0.83
+	yscale 1.2
+	patch HPAKA0,0,0{rotate 270}
+}
+sprite HPAKC0,22,21{
+	offset 11,21
+	patch STASQGR,4,0{}
+	patch HPAKA0,0,1{}
+}
